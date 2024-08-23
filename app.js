@@ -1,8 +1,16 @@
-const colors = ["green", "red", "rgba(133,122,200)", "#f15025"];
+// chon cac phan tu
+const panels = document.querySelectorAll(".panel");
 
-const btn = document.getElementById("btn");
-const color = document.querySelector(".color");
-
-btn.addEventListener("click", function () {
-  console.log(document.bo);
+panels.forEach((i) => {
+  console.log(i);
+  i.addEventListener("click", () => {
+    removeActive();
+    i.classList.add("active");
+  });
 });
+
+function removeActive() {
+  panels.forEach((e) => {
+    e.classList.remove("active");
+  });
+}
